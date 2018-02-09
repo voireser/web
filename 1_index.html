@@ -22,7 +22,7 @@
 	<body class="index">
 		<nav class="pageTop">
 			<div>
-				<a href="0_login.html"><img class="img-responsive" src="img/logo.png"></a>
+				<a href="index.html"><img class="img-responsive" src="img/logo.png"></a>
 				<p><i class="iconfont">&#xe64e;</i>4000-328-806</p>
 				<div class="navigation">
 					<a class="active" href="1_index.html">主页</a>
@@ -34,7 +34,7 @@
 			</div>
 		</nav>
 
-		<div class="banner" style="background-position-y: 50%;">
+		<div class="banner">
 			<div>
 				<p>全效净化服务</p>
 				<p class="point"><span></span><span></span><span></span></p>
@@ -114,7 +114,7 @@
 				<p>弘辉量子服务团队为数家光触媒企业提供施工服务</p>
 				<p class="more"><a href="5_case.html">了解更多</a></p>
 			</div>
-			<div class="limitWindow case">
+			<div class="limitWindow">
 				<a href="5_case.html">
 					<img class="img-responsive" src="img/indexPic_4.jpg">
 					<p>特斯拉TESLA办公区空气综合治理</p>
@@ -185,7 +185,7 @@
 
 		<div class="footer">
 			<div>
-				<a href="0_login.html"><img class="img-responsive" src="img/logo_w.png"></a>
+				<a href="index.html"><img class="img-responsive" src="img/logo_w.png"></a>
 				<div class="navigation">
 					<p><i class="iconfont">&#xe64b;</i>北京市朝阳区大裤衩档底下13L-1101</p>
 					<p><i class="iconfont">&#xe64e;</i>4000-328-806</p>
@@ -196,50 +196,13 @@
 		
 		<footer><p>Copyright © 2018 Hong Hui Quantum. All Rights Reserved.</p></footer>
 
+		<a href="javascript:" class="cd-top">Top</a>
+
 		<script type="text/javascript" src="swiper/swiper.min.js"></script>	
 		<script type="text/javascript" src="jquery.min.js"></script>	
-		<script type="text/javascript" src="prefixfree.min.js"></script>	
 		<script type="text/javascript" src="CountUp.js"></script>	
-		<script> 
-			function parallax(className, speed) {
-				document.getElementsByClassName(className)[0].style.backgroundPositionY = (50 - window.pageYOffset/speed) + "%";
-				
-				var options = {
-					useEasing: true,
-					useGrouping: true,
-					separator: '',
-					decimal: '',
-				};
-				var numLimit = 280;
-				var homeCount = new CountUp('homeNum', 0, 2000, 0, 2.5, options);
-				var coverCount = new CountUp('coverNum', 0, 1000000, 0, 2.5, options);
-				var heavyCount = new CountUp('heavyNum', 0, 100000, 0, 2.5, options);
-				var hourCount = new CountUp('hourNum', 0, 24, 0, 2.5, options);
-				var dayCount = new CountUp('dayNum', 0, 365, 0, 2.5, options);
-				
-				if (document.documentElement.scrollTop > numLimit) {
-					if ( !homeCount.error ) { homeCount.start(); } else { console.error(homeCount.error); }
-					if ( !coverCount.error ) { coverCount.start(); } else { console.error(coverCount.error); }
-					if ( !heavyCount.error ) { heavyCount.start(); } else { console.error(heavyCount.error); }
-					if ( !hourCount.error ) { hourCount.start(); } else { console.error(hourCount.error); }
-					if ( !dayCount.error ) { dayCount.start(); } else { console.error(dayCount.error); }
-					numLimit = Infinity;
-				}
-
-				window.onscroll = function() {
-					document.getElementsByClassName(className)[0].style.backgroundPositionY = (50 - window.pageYOffset/speed) + "%";
-					if (document.documentElement.scrollTop > numLimit) {
-						if ( !homeCount.error ) { homeCount.start(); } else { console.error(homeCount.error); }
-						if ( !coverCount.error ) { coverCount.start(); } else { console.error(coverCount.error); }
-						if ( !heavyCount.error ) { heavyCount.start(); } else { console.error(heavyCount.error); }
-						if ( !hourCount.error ) { hourCount.start(); } else { console.error(hourCount.error); }
-						if ( !dayCount.error ) { dayCount.start(); } else { console.error(dayCount.error); }
-						numLimit = Infinity;
-					}
-				};
-			}
-
-			window.onload = function() {
+		<script>
+			$(function() {
 				var swiper = new Swiper('.swiper-container', {
 					pagination : '.swiper-pagination',
 					paginationClickable :true,
@@ -248,8 +211,95 @@
 					loop : true
 				})
 				
-				parallax('banner', 1.5);
-			}
+				var options = {
+					useEasing: true,
+					useGrouping: true,
+					separator: '',
+					decimal: '',
+				};
+				var countLimit = 1;
+				var homeCount = new CountUp('homeNum', 0, 2000, 0, 3, options);
+				var coverCount = new CountUp('coverNum', 0, 1000000, 0, 3, options);
+				var heavyCount = new CountUp('heavyNum', 0, 100000, 0, 3, options);
+				var hourCount = new CountUp('hourNum', 0, 24, 0, 3, options);
+				var dayCount = new CountUp('dayNum', 0, 365, 0, 3, options);
+	
+				if ($(window).scrollTop() + $(window).height() > $('.numCount').offset().top && countLimit === 1) {
+					if ( !homeCount.error ) { homeCount.start(); } else { console.error(homeCount.error); }
+					if ( !coverCount.error ) { coverCount.start(); } else { console.error(coverCount.error); }
+					if ( !heavyCount.error ) { heavyCount.start(); } else { console.error(heavyCount.error); }
+					if ( !hourCount.error ) { hourCount.start(); } else { console.error(hourCount.error); }
+					if ( !dayCount.error ) { dayCount.start(); } else { console.error(dayCount.error); }
+					countLimit = 0;
+				}
+
+				if ($(window).scrollTop() + $(window).height() > $('.numCount').offset().top) {
+					$('.numCount').addClass('upAnimate');
+				};
+
+				if ($(window).scrollTop() + $(window).height() > $('.threeBg>div>div').offset().top) {
+					$('.threeBg').addClass('leftAnimate');
+				};
+
+				var offset = 300,
+					offset_opacity = 1200,
+					scroll_top_duration = 700,
+					$back_to_top = $('.cd-top');
+
+				$back_to_top.on('click', function(event) {
+					event.preventDefault();
+					$('body,html').animate({
+						scrollTop: 0,
+					}, scroll_top_duration)
+				})
+				
+				window.onscroll = function() {
+					if ($(window).scrollTop() + $(window).height() > $('.numCount').offset().top && countLimit === 1) {
+						if ( !homeCount.error ) { homeCount.start(); } else { console.error(homeCount.error); }
+						if ( !coverCount.error ) { coverCount.start(); } else { console.error(coverCount.error); }
+						if ( !heavyCount.error ) { heavyCount.start(); } else { console.error(heavyCount.error); }
+						if ( !hourCount.error ) { hourCount.start(); } else { console.error(hourCount.error); }
+						if ( !dayCount.error ) { dayCount.start(); } else { console.error(dayCount.error); }
+						countLimit = 0;
+					};
+					
+					if ($(window).scrollTop() + $(window).height() > $('.numCount').offset().top) {
+						$('.numCount').addClass('upAnimate');
+					};
+					
+					if ($(window).scrollTop() + $(window).height() > $('.threeBg>div>div').offset().top) {
+						$('.threeBg').addClass('leftAnimate');
+					};
+
+					($(window).scrollTop() > offset) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
+					if ($(window).scrollTop() > offset_opacity) {
+						$back_to_top.addClass('cd-fade-out')
+					}
+				};
+
+				jQuery.rnd = function(m,n) {
+					m = parseInt(m);
+					n = parseInt(n);
+					return Math.floor( Math.random() * (n - m + 1) ) + m;
+				}
+				
+				$('.showSpace').on('mouseenter', function() {
+					$(this).addClass('bubbles');
+					var bubblecount = ($(this).width()/1000)*10;
+					for(var i = 0; i <= bubblecount; i++) {
+						var size = ($.rnd(40,80)/10);
+						$('.bubbles').append(
+							'<span class="particle" style="top:' + $.rnd(20,80) + 
+							'%; left:' + $.rnd(0,95) + '%;width:' + size + 'px; height:' 
+							+ size + 'px;animation-delay: ' + ($.rnd(0,30)/10) + 's;"></span>');
+					}
+				})
+
+				$('.showSpace').on('mouseleave', function() {
+					$(this).removeClass('bubbles');
+					$(this).children('.particle').remove()
+				})
+			})
 		</script>
 	</body>
 </html>

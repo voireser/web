@@ -1,0 +1,112 @@
+{
+    "case": [
+        {
+            "id": 1,
+            "class": "bulid",
+            "area": ["beijing", "guangzhou", "shanghai", "shenzhen"],
+            "titlePic": "img/case/title_1.jpg",
+            "title": "特斯拉TESLA办公区空气综合治理",
+            "result": "4,000㎡",
+            "picUrl": ["img/case/beijing_1_1.jpg", "img/case/beijing_1_2.jpg", "img/case/beijing_1_3.jpg", "img/case/beijing_1_4.jpg", "img/case/beijing_1_5.jpg", "img/case/beijing_1_6.jpg", "img/case/beijing_1_7.jpg", "img/case/beijing_1_8.jpg"]
+        },
+        {
+            "id": 2,
+            "class": "bulid",
+            "area": ["beijing", "guangzhou", "shanghai", "shenzhen"],
+            "titlePic": "img/case/title_2.jpg",
+            "title": "TESLA展示厅空气综合治理",
+            "result": "500㎡",
+            "picUrl": ["img/case/beijing_2_1.jpg", "img/case/beijing_2_2.jpg", "img/case/beijing_2_3.jpg"]
+        },
+        {
+            "id": 3,
+            "class": "bulid",
+            "area": "beijing",
+            "titlePic": "img/case/title_3.jpg",
+            "title": "国家电网顺义调度中心空气综合治理",
+            "result": "300㎡",
+            "picUrl": ["img/case/beijing_3_1.jpg", "img/case/beijing_3_2.jpg", "img/case/beijing_3_3.jpg", "img/case/beijing_3_4.jpg"]
+        },
+        {
+            "id": 4,
+            "class": "bulid",
+            "area": "beijing",
+            "titlePic": "img/case/title_4.jpg",
+            "title": "格拉斯小镇别墅室内空气综合治理",
+            "result": "1,500㎡",
+            "picUrl": ["img/case/beijing_4_1.jpg", "img/case/beijing_4_2.jpg", "img/case/beijing_4_3.jpg", "img/case/beijing_4_4.jpg", "img/case/beijing_4_5.jpg"]
+        },
+        {
+            "id": 5,
+            "class": "bulid",
+            "area": "beijing",
+            "titlePic": "img/case/title_5.jpg",
+            "title": "海晟名苑住宅室内空气综合治理",
+            "result": "300㎡",
+            "picUrl": ["img/case/beijing_5_1.jpg", "img/case/beijing_5_2.jpg", "img/case/beijing_5_3.jpg", "img/case/beijing_5_4.jpg", "img/case/beijing_5_5.jpg", "img/case/beijing_5_6.jpg"]
+        },
+        {
+            "id": 6,
+            "class": "bulid",
+            "area": "beijing",
+            "titlePic": "img/case/title_6.jpg",
+            "title": "AnRic幼儿园空气综合治理",
+            "result": "500㎡",
+            "picUrl": ["img/case/beijing_6_1.jpg", "img/case/beijing_6_2.jpg", "img/case/beijing_6_3.jpg", "img/case/beijing_6_4.jpg", "img/case/beijing_6_5.jpg", "img/case/beijing_6_6.jpg", "img/case/beijing_6_7.jpg"]
+        },
+        {
+            "id": 7,
+            "class": "bulid",
+            "area": "beijing",
+            "titlePic": "img/case/title_7.jpg",
+            "title": "佳汇国际中心室内空气综合治理",
+            "result": "1,200㎡",
+            "picUrl": ["img/case/beijing_7_1.jpg", "img/case/beijing_7_2.jpg", "img/case/beijing_7_3.jpg"]
+        },
+        {
+            "id": 8,
+            "class": "bulid",
+            "area": "beijing",
+            "titlePic": "img/case/title_8.jpg",
+            "title": "神华集团创新研究院公寓楼",
+            "result": "2,500㎡",
+            "picUrl": ["img/case/beijing_8_1.jpg", "img/case/beijing_8_2.jpg", "img/case/beijing_8_3.jpg"]
+        },
+        {
+            "id": 9,
+            "class": "car",
+            "area": "beijing",
+            "titlePic": "img/case/title_9.jpg",
+            "title": "车内施工",
+            "result": "奔驰",
+            "picUrl": ["img/case/car_9_1.jpg", "img/case/car_9_2.jpg", "img/case/car_9_3.jpg"]
+        },
+        {
+            "id": 10,
+            "class": "car",
+            "area": "beijing",
+            "titlePic": "img/case/title_10.jpg",
+            "title": "车内施工",
+            "result": "雷克萨斯",
+            "picUrl": ["img/case/car_10_1.jpg", "img/case/car_10_2.jpg", "img/case/car_10_3.jpg"]
+        },
+        {
+            "id": 11,
+            "class": "car",
+            "area": "beijing",
+            "titlePic": "img/case/title_11.jpg",
+            "title": "车内施工",
+            "result": "福特",
+            "picUrl": ["img/case/car_11_1.jpg", "img/case/car_11_2.jpg", "img/case/car_11_3.jpg", "img/case/car_11_4.jpg"]
+        },
+        {
+            "id": 12,
+            "class": "car",
+            "area": "beijing",
+            "titlePic": "img/case/title_12.jpg",
+            "title": "车内施工",
+            "result": "斯巴鲁",
+            "picUrl": ["img/case/car_12_1.jpg", "img/case/car_12_2.jpg", "img/case/car_12_3.jpg"]
+        }
+    ]
+}

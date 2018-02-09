@@ -22,7 +22,7 @@
 	<body class="case">
 		<nav class="pageTop">
 			<div>
-				<a href="0_login.html"><img class="img-responsive" src="img/logo.png"></a>
+				<a href="index.html"><img class="img-responsive" src="img/logo.png"></a>
 				<p><i class="iconfont">&#xe64e;</i>4000-328-806</p>
 				<div class="navigation">
 					<a href="1_index.html">主页</a>
@@ -60,16 +60,6 @@
 					<p>特斯拉TESLA办公区空气综合治理</p>
 					<p>总治理面积：<span>4000㎡</span></p>
 				</a>
-				<a href="javascript:">
-					<img class="img-responsive" src="img/indexPic_5.jpg">
-					<p>华贸中心7-8层TESLA办公区空气综合治理</p>
-					<p>总治理面积：<span>2800㎡</span></p>
-				</a>
-				<a href="javascript:">
-					<img class="img-responsive" src="img/indexPic_6.jpg">
-					<p>车辆施工</p>
-					<p>种类：<span>雷克萨斯</span></p>
-				</a>
 			</div>
 		</div>>
 
@@ -95,7 +85,7 @@
 
 		<div class="footer">
 			<div>
-				<a href="0_login.html"><img class="img-responsive" src="img/logo_w.png"></a>
+				<a href="index.html"><img class="img-responsive" src="img/logo_w.png"></a>
 				<div class="navigation">
 					<p><i class="iconfont">&#xe64b;</i>北京市朝阳区大裤衩档底下13L-1101</p>
 					<p><i class="iconfont">&#xe64e;</i>4000-328-806</p>
@@ -106,16 +96,85 @@
 		
 		<footer><p>Copyright © 2018 Hong Hui Quantum. All Rights Reserved.</p></footer>
 
+		<a href="javascript:" class="cd-top">Top</a>
+
+		<div class="jDialog" id="modal_case">
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<img class="img-responsive" src="img/techPic_3.jpg">
+					</div>
+					<div class="swiper-slide">
+						<img class="img-responsive" src="img/techPic_4.jpg">
+					</div>
+					<div class="swiper-slide">
+						<img class="img-responsive" src="img/techPic_5.jpg">
+					</div>
+					<div class="swiper-slide">
+						<img class="img-responsive" src="img/techPic_6.jpg">
+					</div>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+			<button class="catchMe" data-dismiss="JDialog">×</button>
+		</div>  
+		
 		<script type="text/javascript" src="swiper/swiper.min.js"></script>	
-		<!-- <script type="text/javascript" src="jquery.min.js"></script>	 -->
-		<!-- <script type="text/javascript" src="bootstrap.min.js"></script>	 -->
-		<script> 
-			var swiper = new Swiper('.swiper-container', {
-				pagination : '.swiper-pagination',
-				paginationClickable :true,
-				slidesPerView : 6,
-				autoplay: 10000,
-				loop : true
+		<script type="text/javascript" src="jquery.min.js"></script>	
+		<script type="text/javascript" src="jdialog.min.js"></script>	
+		<script>
+			$(function() {
+				$.ajax({
+					type: 'POST',
+					url: 'case.json',
+					success: function(data) {
+						$.each(data, function(idx, obj) {
+							console.log(data)
+						});
+					}
+				})
+
+				$('#modal_case').jDialog({
+					skinClassName: 'modal_case',
+					allowOverlay: true,
+					animationType: 'fade-in'
+				}); 
+
+				var caseSwiper = new Swiper('#modal_case .swiper-container', {
+					effect : 'flip',
+					loop : true,
+					pagination : '.swiper-pagination',
+					paginationType : 'fraction'
+				})
+
+				$('.catchMe').on('mouseenter', function() {
+					$(this)
+						.css('top', (Math.random() - 0.5) * 20 + '%')
+						.css('right', (Math.random() - 0.5) * 20 + '%');
+				});
+
+				$('[data-toggle').on('click', function() {
+					$('.catchMe').css('top', 0).css('right', 0);
+				})
+
+				var offset = 300,
+					offset_opacity = 1200,
+					scroll_top_duration = 700,
+					$back_to_top = $('.cd-top');
+
+				$back_to_top.on('click', function(event) {
+					event.preventDefault();
+					$('body,html').animate({
+						scrollTop: 0,
+					}, scroll_top_duration)
+				})
+				
+				window.onscroll = function() {
+					($(window).scrollTop() > offset) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
+					if ($(window).scrollTop() > offset_opacity) {
+						$back_to_top.addClass('cd-fade-out')
+					}
+				};
 			})
 		</script>
 	</body>

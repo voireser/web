@@ -10,7 +10,6 @@
 
 		<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="HHQ.css">
-		<link rel="stylesheet" type="text/css" href="swiper/swiper.min.css">
 
 		<script type="text/javascript">
 			var oHtml = document.getElementsByTagName("html")[0];
@@ -22,7 +21,7 @@
 	<body class="service">
 		<nav class="pageTop">
 			<div>
-				<a href="0_login.html"><img class="img-responsive" src="img/logo.png"></a>
+				<a href="index.html"><img class="img-responsive" src="img/logo.png"></a>
 				<p><i class="iconfont">&#xe64e;</i>4000-328-806</p>
 				<div class="navigation">
 					<a href="1_index.html">主页</a>
@@ -252,7 +251,7 @@
 
 		<div class="footer">
 			<div>
-				<a href="0_login.html"><img class="img-responsive" src="img/logo_w.png"></a>
+				<a href="index.html"><img class="img-responsive" src="img/logo_w.png"></a>
 				<div class="navigation">
 					<p><i class="iconfont">&#xe64b;</i>北京市朝阳区大裤衩档底下13L-1101</p>
 					<p><i class="iconfont">&#xe64e;</i>4000-328-806</p>
@@ -263,16 +262,45 @@
 		
 		<footer><p>Copyright © 2018 Hong Hui Quantum. All Rights Reserved.</p></footer>
 
-		<script type="text/javascript" src="swiper/swiper.min.js"></script>	
-		<!-- <script type="text/javascript" src="jquery.min.js"></script>	 -->
-		<!-- <script type="text/javascript" src="bootstrap.min.js"></script>	 -->
-		<script> 
-			var swiper = new Swiper('.swiper-container', {
-				pagination : '.swiper-pagination',
-				paginationClickable :true,
-				slidesPerView : 6,
-				autoplay: 10000,
-				loop : true
+		<a href="javascript:" class="cd-top">Top</a>
+
+		<script type="text/javascript" src="jquery.min.js"></script>	
+		<script>
+			$(function() {
+				if ($(window).scrollTop() + $(window).height() > $('.showThree>div').offset().top) {
+					$('.showThree').addClass('upAnimate');
+				};
+
+				if ($(window).scrollTop() + $(window).height() > $('.process').offset().top) {
+					$('.process').addClass('fiveLeft');
+				};
+
+				var offset = 300,
+					offset_opacity = 1200,
+					scroll_top_duration = 700,
+					$back_to_top = $('.cd-top');
+
+				$back_to_top.on('click', function(event) {
+					event.preventDefault();
+					$('body,html').animate({
+						scrollTop: 0,
+					}, scroll_top_duration)
+				})
+				
+				window.onscroll = function() {
+					if ($(window).scrollTop() + $(window).height() > $('.showThree>div').offset().top) {
+						$('.showThree').addClass('upAnimate');
+					};
+
+					if ($(window).scrollTop() + $(window).height() > $('.process').offset().top) {
+						$('.process').addClass('fiveLeft');
+					};
+
+					($(window).scrollTop() > offset) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
+					if ($(window).scrollTop() > offset_opacity) {
+						$back_to_top.addClass('cd-fade-out')
+					}
+				};
 			})
 		</script>
 	</body>
