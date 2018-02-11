@@ -115,8 +115,10 @@ p.more{padding:0!important;}
 .threeBg p:last-child{margin:0;}
 .limitWindow{position:relative;display:table;margin:auto;width:1200px;}
 .index .limitWindow{margin-top:30px;margin-bottom:15px;}
+.index .limitWindow a{width: 30%}
 .limitWindow>div{padding-bottom: 45px;width:30%;}
 .limitWindow a{background-color: #fcfcfc;overflow:hidden;padding-bottom:25px;border-bottom:1px solid #ddd;float: left;-webkit-transition:.3s;-moz-transition:.3s;-o-transition:.3s;transition:.3s;}
+.limitWindow a:nth-child(2){margin-left: 5%;margin-right: 5%;}
 .limitWindow a p{margin-top:20px;text-align:center;}
 .limitWindow a p:last-child{margin-top:8px;font-size:.4rem;}
 .limitWindow span{color:#078ddc;}
