@@ -95,9 +95,10 @@
 		<script type="text/javascript" src="jdialog.min.js"></script>	
 		<script>
 			$(function() {
-				$.get({
-					url: 'case.json',
+				$.ajax({
+					type: 'get',
 					dataType: 'json',
+					url: 'case.json',
 					success: function(data) {
 						$.each(data, function() {
 							var categoryArr = [];
