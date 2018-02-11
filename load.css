@@ -1,0 +1,13 @@
+@-webkit-keyframes tipsy{
+    0{-webkit-transform:translateX(-50%) translateY(-50%) rotate(0);transform:translateX(-50%) translateY(-50%) rotate(0);}
+    100%{-webkit-transform:translateX(-50%) translateY(-50%) rotate(360deg);transform:translateX(-50%) translateY(-50%) rotate(360deg);}
+}
+@keyframes tipsy{
+    0{-webkit-transform:translateX(-50%) translateY(-50%) rotate(0);transform:translateX(-50%) translateY(-50%) rotate(0);}
+    100%{-webkit-transform:translateX(-50%) translateY(-50%) rotate(360deg);transform:translateX(-50%) translateY(-50%) rotate(360deg);}
+}
+body{background-color:#2e2e31;font-family:helvetica,arial,sans-serif;}
+.load{position:absolute;top:50%;left:50%;margin:0;color:#fffbf1;text-decoration:none;text-shadow:0 20px 25px #2e2e31,0 40px 60px #2e2e31;letter-spacing:-3px;font-weight:700;font-size:80px;-webkit-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%);}
+.load:after,.load:before{position:absolute;top:50%;left:50%;display:block;padding:.9em .4em;width:100%;border:15px solid red;content:'';-webkit-transform:translateX(-50%) translateY(-50%) rotate(0);transform:translateX(-50%) translateY(-50%) rotate(0);-webkit-animation:10s infinite alternate ease-in-out tipsy;animation:10s infinite alternate ease-in-out tipsy;}
+.load:before{z-index:-1;border-color:#d9524a #d9524a transparent transparent;}
+.load:after{border-color:transparent transparent #d9524a #d9524a;-webkit-box-shadow:25px 25px 25px rgba(46,46,49,.8);box-shadow:25px 25px 25px rgba(46,46,49,.8);}
