@@ -83,7 +83,7 @@ footer{bottom:0;margin:0;padding:20px 0;width:100%;background-color:#060606;colo
 p.more{padding:0!important;}
 p.more>a{display:inline-block;padding:5px 15px;border:1px solid #078ddc;color:#078ddc;-webkit-transition:.3s;-moz-transition:.3s;-o-transition:.3s;transition:.3s;}
 p.more>a:hover{color:#f6f6f6;background-color: #078ddc}
-p.more{padding:0!important;}
+p.more{padding:0!important;pointer-events: auto;}
 .threeBg p.more>a{border:1px solid #f6f6f6;background-color:#f6f6f6;color:#111;}
 .threeBg p.more>a:hover{background-color:transparent;color:#f6f6f6;}
 .indexWindow p.more>a{display:inline-block;padding:9px 27px!important;text-shadow: none;border-color:#078ddc;background-color:#078ddc;color:#fcfcfc;font-size:14px;line-height:.5rem;}
@@ -486,7 +486,7 @@ p.more{padding:0!important;}
     100%{margin-right:0;margin-left:0;opacity:1;}
 }
 
-.cd-top{position:fixed;right:10px;bottom:40px;display:inline-block;visibility:hidden;overflow:hidden;width:40px;height:40px;background:rgba(7, 141, 220, 0.8) url(img/cd-top-arrow.svg) no-repeat center 50%;box-shadow:0 0 10px rgba(0,0,0,.05);text-indent:100%;white-space:nowrap;opacity:0;-webkit-transition:opacity .3s 0s,visibility 0s .3s;-moz-transition:opacity .3s 0s,visibility 0s .3s;transition:opacity .3s 0s,visibility 0s .3s;}
+.cd-top{position:fixed;right:10px;bottom:40px;border-radius: 100rem;display:inline-block;visibility:hidden;overflow:hidden;width:40px;height:40px;background:rgba(7, 141, 220, 0.8) url(img/cd-top-arrow.svg) no-repeat center 50%;box-shadow:0 0 10px rgba(0,0,0,.05);text-indent:100%;white-space:nowrap;opacity:0;-webkit-transition:opacity .3s 0s,visibility 0s .3s;-moz-transition:opacity .3s 0s,visibility 0s .3s;transition:opacity .3s 0s,visibility 0s .3s;}
 .cd-top.cd-fade-out,.cd-top.cd-is-visible,.no-touch .cd-top:hover{-webkit-transition:opacity .3s 0s,visibility 0s 0s;-moz-transition:opacity .3s 0s,visibility 0s 0s;transition:opacity .3s 0s,visibility 0s 0s;}
 .cd-top.cd-is-visible{visibility:visible;opacity:1;}
 .cd-top.cd-fade-out{opacity:.5;}
