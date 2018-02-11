@@ -75,6 +75,9 @@
 
 		<script type="text/javascript" src="swiper/swiper.min.js"></script>	
 		<script> 
+			var usBanner = new Image();
+			usBanner.src="img/usBanner_1.jpg";
+
 			;(function(main) {
 				var args = {};
 				window.onload = function() {
@@ -234,9 +237,8 @@
 				requestAnimationFrame(function loop() {
 					requestAnimationFrame(loop);
 					ctx.globalCompositeOperation = 'source-over';
-					var img = new Image()
-					img.src="img/usBanner_1.jpg"
-					ctx.drawImage(img, 0, 0, WIDTH, HEIGHT);
+					
+					ctx.drawImage(usBanner, 0, 0, WIDTH, HEIGHT);
 
 					ctx.fillStyle = 'white';
 					ctx.fillText('', WIDTH / 2, HEIGHT / 2 + 100);
