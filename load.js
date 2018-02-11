@@ -15,6 +15,9 @@ document.onreadystatechange = completeLoading;
 function completeLoading() {  
     if (document.readyState == "complete") {  
         var loadingMask = document.getElementById('load');  
-        loadingMask.parentNode.removeChild(loadingMask);  
+        loadingMask.className = 'disappear';
+        setTimeout(function disappear(){
+            loadingMask.parentNode.removeChild(loadingMask); 
+        }, 500)
     }  
 }  
