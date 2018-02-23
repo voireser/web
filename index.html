@@ -8,11 +8,91 @@
 		<meta name="author" content="Voireser" />
 		<meta name="keywords" content="弘辉量子" />
 
+		<style type="text/css">
+			canvas#d{display:block;width:100%;height:100%;cursor:pointer;}
+			#load{position:absolute;height:100%;width:100%;top:0;left:0;background-color:#078ddc;z-index: 10000;}
+			.load{position:absolute;min-width:50%;width:auto;height:120px;top:50%;left:50%;margin:-60px 0 0 -25%;text-align:center;display:table}
+			.load p{font-size:2rem;display:inline-block;color:#f6f6f6;font-weight:700;line-height:120px;white-space: nowrap}
+			.load p:nth-child(1){-webkit-animation:2s jump_1 ease infinite alternate;animation:2s jump_1 ease infinite alternate;}
+			.load p:nth-child(2){-webkit-animation:2s jump_2 ease infinite alternate;animation:2s jump_2 ease infinite alternate;}
+			.load p:nth-child(3){-webkit-animation:2s jump_3 ease infinite alternate;animation:2s jump_3 ease infinite alternate;}
+			.load p:nth-child(4){-webkit-animation:2s jump_4 ease infinite alternate;animation:2s jump_4 ease infinite alternate;}
+			.load p:nth-child(5){-webkit-animation:2s jump_5 ease infinite alternate;animation:2s jump_5 ease infinite alternate;}
+			.load p:nth-child(6){-webkit-animation:2s jump_6 ease infinite alternate;animation:2s jump_6 ease infinite alternate;}
+			.load p:nth-child(7){-webkit-animation:2s jump_7 ease infinite alternate;animation:2s jump_7 ease infinite alternate;}
+			#load.disappear{-webkit-animation:.5s disappear ease infinite alternate;animation:.5s disappear ease infinite alternate;}
+			@-webkit-keyframes disappear{
+				0%{opacity: 1}
+				100%{opacity: 0}
+			}
+			@keyframes disappear{
+				0%{opacity: 1}
+				100%{opacity: 0}
+			}
+			@-webkit-keyframes jump_1{
+				0%{text-shadow:0 1px 2px rgba(0,0,0,.3);-webkit-transform:scale(1);transform:scale(1);}
+				40%{text-shadow:0 4px 20px rgba(0,0,0,.1);-webkit-transform:scale(1.2);transform:scale(1.2);}
+			}
+			@keyframes jump_1{
+				0%{text-shadow:0 1px 2px rgba(0,0,0,.3);-webkit-transform:scale(1);transform:scale(1);}
+				40%{text-shadow:0 4px 20px rgba(0,0,0,.1);-webkit-transform:scale(1.2);transform:scale(1.2);}
+			}
+			@-webkit-keyframes jump_2{
+				10%{text-shadow:0 1px 2px rgba(0,0,0,.3);-webkit-transform:scale(1);transform:scale(1);}
+				50%{text-shadow:0 4px 20px rgba(0,0,0,.1);-webkit-transform:scale(1.2);transform:scale(1.2);}
+			}
+			@keyframes jump_2{
+				10%{text-shadow:0 1px 2px rgba(0,0,0,.3);-webkit-transform:scale(1);transform:scale(1);}
+				50%{text-shadow:0 4px 20px rgba(0,0,0,.1);-webkit-transform:scale(1.2);transform:scale(1.2);}
+			}
+			@-webkit-keyframes jump_3{
+				20%{text-shadow:0 1px 2px rgba(0,0,0,.3);-webkit-transform:scale(1);transform:scale(1);}
+				60%{text-shadow:0 4px 20px rgba(0,0,0,.1);-webkit-transform:scale(1.2);transform:scale(1.2);}
+			}
+			@keyframes jump_3{
+				20%{text-shadow:0 1px 2px rgba(0,0,0,.3);-webkit-transform:scale(1);transform:scale(1);}
+				60%{text-shadow:0 4px 20px rgba(0,0,0,.1);-webkit-transform:scale(1.2);transform:scale(1.2);}
+			}
+			@-webkit-keyframes jump_4{
+				30%{text-shadow:0 1px 2px rgba(0,0,0,.3);-webkit-transform:scale(1);transform:scale(1);}
+				70%{text-shadow:0 4px 20px rgba(0,0,0,.1);-webkit-transform:scale(1.2);transform:scale(1.2);}
+			}
+			@keyframes jump_4{
+				30%{text-shadow:0 1px 2px rgba(0,0,0,.3);-webkit-transform:scale(1);transform:scale(1);}
+				70%{text-shadow:0 4px 20px rgba(0,0,0,.1);-webkit-transform:scale(1.2);transform:scale(1.2);}
+			}
+			@-webkit-keyframes jump_5{
+				40%{text-shadow:0 1px 2px rgba(0,0,0,.3);-webkit-transform:scale(1);transform:scale(1);}
+				80%{text-shadow:0 4px 20px rgba(0,0,0,.1);-webkit-transform:scale(1.2);transform:scale(1.2);}
+			}
+			@keyframes jump_5{
+				40%{text-shadow:0 1px 2px rgba(0,0,0,.3);-webkit-transform:scale(1);transform:scale(1);}
+				80%{text-shadow:0 4px 20px rgba(0,0,0,.1);-webkit-transform:scale(1.2);transform:scale(1.2);}
+			}
+			@-webkit-keyframes jump_6{
+				50%{text-shadow:0 1px 2px rgba(0,0,0,.3);-webkit-transform:scale(1);transform:scale(1);}
+				90%{text-shadow:0 4px 20px rgba(0,0,0,.1);-webkit-transform:scale(1.2);transform:scale(1.2);}
+			}
+			@keyframes jump_6{
+				50%{text-shadow:0 1px 2px rgba(0,0,0,.3);-webkit-transform:scale(1);transform:scale(1);}
+				90%{text-shadow:0 4px 20px rgba(0,0,0,.1);-webkit-transform:scale(1.2);transform:scale(1.2);}
+			}
+			@-webkit-keyframes jump_7{
+				60%{text-shadow:0 1px 2px rgba(0,0,0,.3);-webkit-transform:scale(1);transform:scale(1);}
+				100%{text-shadow:0 4px 20px rgba(0,0,0,.1);-webkit-transform:scale(1.2);transform:scale(1.2);}
+			}
+			@keyframes jump_7{
+				60%{text-shadow:0 1px 2px rgba(0,0,0,.3);-webkit-transform:scale(1);transform:scale(1);}
+				100%{text-shadow:0 4px 20px rgba(0,0,0,.1);-webkit-transform:scale(1.2);transform:scale(1.2);}
+			}
+		</style>
+
+		<script type="text/javascript" src="load.js"></script>	
+
 		<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="HHQ.css">
 		<link rel="stylesheet" type="text/css" href="swiper/swiper.min.css">
 		
-		<script type="text/javascript" src="load.js"></script>	
 		<script type="text/javascript">
 			var oHtml = document.getElementsByTagName("html")[0];
 			var iWidth = document.documentElement.clientWidth;
@@ -76,7 +156,7 @@
 		</div>
 
 		<script type="text/javascript" src="swiper/swiper.min.js"></script>	
-		<script> 
+		<script type="text/javascript"> 
 			var usBanner = new Image();
 			usBanner.src="img/usBanner_1.jpg";
 
