@@ -1,7 +1,7 @@
 // var value = sessionStorage.getItem("key");console.log(value)
 // if(value === null) {
 // sessionStorage.setItem("key", 1); 
-var _LoadingHtml = '<div id="load"><div class="load"><p>L</p><p>o</p><p>a</p><p>d</p><p>i</p><p>n</p><p>g</p></div><canvas id="c"></canvas></div>';  
+var _LoadingHtml = '<div id="load"><div class="load"><p>L</p><p>o</p><p>a</p><p>d</p><p>i</p><p>n</p><p>g</p></div><canvas id="d"></canvas></div>';  
 document.write(_LoadingHtml);  
 var anime=function(){var x={duration:1E3,delay:0,loop:!1,autoplay:!0,direction:"normal",easing:"easeOutElastic",elasticity:400,round:!1,begin:void 0,update:void 0,complete:void 0},M="translateX translateY translateZ rotate rotateX rotateY rotateZ scale scaleX scaleY scaleZ skewX skewY".split(" "),e=function(){return{array:function(a){return Array.isArray(a)},object:function(a){return-1<Object.prototype.toString.call(a).indexOf("Object")},html:function(a){return a instanceof NodeList||a instanceof
 HTMLCollection},node:function(a){return a.nodeType},svg:function(a){return a instanceof SVGElement},number:function(a){return!isNaN(parseInt(a))},string:function(a){return"string"===typeof a},func:function(a){return"function"===typeof a},undef:function(a){return"undefined"===typeof a},"null":function(a){return"null"===typeof a},hex:function(a){return/(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(a)},rgb:function(a){return/^rgb/.test(a)},rgba:function(a){return/^rgba/.test(a)},hsl:function(a){return/^hsl/.test(a)},
@@ -23,7 +23,7 @@ b.seek=function(a){K(b,a/100*b.duration)};b.pause=function(){b.running=!1;cancel
 return b};l.speed=1;l.list=m;l.remove=function(a){a=t(e.array(a)?a.map(n):n(a));for(var b=m.length-1;0<=b;b--)for(var c=m[b],d=c.tweens.length-1;0<=d;d--)for(var f=c.tweens[d],h=f.animatables.length-1;0<=h;h--)B(a,f.animatables[h].target)&&(f.animatables.splice(h,1),f.animatables.length||c.tweens.splice(d,1),c.tweens.length||c.pause())};l.easings=y;l.getValue=F;l.path=function(a){a=e.string(a)?A(a)[0]:a;return{path:a,value:a.getTotalLength()}};l.random=function(a,b){return Math.floor(Math.random()*
 (b-a+1))+a};return l}();
 
-var c = document.getElementById("c");
+var c = document.getElementById("d");
 var ctx = c.getContext("2d");
 var cH;
 var cW;
