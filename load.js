@@ -149,8 +149,8 @@ function extend(a, b) {
 }
 
 var Circle = function(opts) {
-		extend(this, opts);
-	}
+    extend(this, opts);
+}
 
 Circle.prototype.draw = function() {
 	ctx.globalAlpha = this.opacity || 1;
@@ -183,16 +183,16 @@ var animate = anime({
 });
 
 var resizeCanvas = function() {
-		var devicePixelRatio = window.devicePixelRatio || 1;
-		var backingStoreRatio = ctx.webkitBackingStorePixelRatio || ctx.mozBackingStorePixelRatio || ctx.msBackingStorePixelRatio || ctx.oBackingStorePixelRatio || ctx.backingStorePixelRatio || 1;
+    var devicePixelRatio = window.devicePixelRatio || 1;
+    var backingStoreRatio = ctx.webkitBackingStorePixelRatio || ctx.mozBackingStorePixelRatio || ctx.msBackingStorePixelRatio || ctx.oBackingStorePixelRatio || ctx.backingStorePixelRatio || 1;
 
-		ratio = devicePixelRatio / backingStoreRatio;
-		cW = window.innerWidth;
-		cH = window.innerHeight;
-		c.width = cW * ratio;
-		c.height = cH * ratio;
-		ctx.scale(ratio, ratio);
-	};
+    ratio = devicePixelRatio / backingStoreRatio;
+    cW = window.innerWidth;
+    cH = window.innerHeight;
+    c.width = cW * ratio;
+    c.height = cH * ratio;
+    ctx.scale(ratio, ratio);
+};
 
 var init = (function() {
 	window.addEventListener("resize", resizeCanvas);
@@ -223,7 +223,6 @@ function fauxClick(x, y) {
 }
 
 document.onreadystatechange = completeLoading;
-// }
   
 function completeLoading() {  
     if (document.readyState == "complete") {  
