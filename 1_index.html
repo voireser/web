@@ -22,8 +22,10 @@
 	<body class="index">
 		<nav class="pageTop">
 			<div>
-				<a href="index.html"><img class="img-responsive" src="img/logo.png"></a>
-				<p><i class="iconfont">&#xe64e;</i>4000-328-806</p>
+				<div class="logoArea">
+					<a href="index.html"><img class="img-responsive" src="img/logo.png"></a>
+					<p><i class="iconfont">&#xe64e;</i>4000-328-806</p>
+				</div>
 				<div class="navigation">
 					<a class="active" href="1_index.html">主页</a>
 					<a href="2_us.html">关于弘辉量子</a>
@@ -50,25 +52,25 @@
 				<p class="more"><a href="2_us.html">了解更多</a></p>
 			</div>
 			<div class="numCount">
-				<div>
+				<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
 					<p><i class="iconfont">&#xe642;</i></p>
 					<p id="homeNum">2000</p>
 					<p>个家庭</p>
 					<p>健康居所<br>一次定制十年服务，我们的承诺</p>
 				</div>
-				<div>
+				<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
 					<p><i class="iconfont">&#xe63d;</i></p>
 					<p id="coverNum">1000000</p>
 					<p>平米治理面积</p>
 					<p>净化能力相当于10万棵白杨树</p>
 				</div>
-				<div>
+				<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
 					<p><i class="iconfont">&#xe64c;</i></p>
 					<p id="heavyNum">100000</p>
 					<p>吨分解有害气体</p>
 					<p>每年分解10万吨有毒有害气体<br>（甲醛、苯系物、TVOC、NO2，SO2）<br>净化率99.9%</p>
 				</div>
-				<div>
+				<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
 					<p><i class="iconfont">&#xe645;</i></p>
 					<p><span id="hourNum">24</span>×<span id="dayNum">365</span></p>
 					<p>小时持续净化</p>
@@ -85,21 +87,21 @@
 		</div>
 
 		<div class="threeBg">
-			<div>
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 				<div>
 					<p>一站式服务</p>
 					<p>专业化服务团队，标准化工艺流程，规范化喷涂设备</p>
 					<p class="more"><a href="4_service.html">了解更多</a></p>
 				</div>
 			</div>
-			<div>
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 				<div>
 					<p>顶尖行业技术</p>
 					<p>纳米技术制成5nm纺锤形复合TiO2晶体，更稳定，更高效</p>
 					<p class="more"><a href="3.5_why.html">了解更多</a></p>
 				</div>
 			</div>
-			<div>
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 				<div>
 					<p>覆盖全国服务网点</p>
 					<p>总部位于北京，营销及服务网络覆盖20多个一二线城市</p>
@@ -196,20 +198,30 @@
 		
 		<footer><p>Copyright © 2018 Hong Hui Quantum. All Rights Reserved.</p></footer>
 
-		<a href="javascript:" class="cd-top">Top</a>
-
 		<script type="text/javascript" src="swiper/swiper.min.js"></script>	
 		<script type="text/javascript" src="jquery.min.js"></script>	
 		<script type="text/javascript" src="CountUp.js"></script>	
 		<script>
+			if (window.innerWidth >= 1200) {
+				var slideNum = 6;
+			} else if (window.innerWidth < 1199 && window.innerWidth >= 992) { 
+				var slideNum = 4;
+			} else if (window.innerWidth < 991 && window.innerWidth >= 768) {
+				var slideNum = 3;
+			} else if (window.innerWidth < 767) {
+				var slideNum = 2;
+			};
+
 			$(function() {
-				var swiper = new Swiper('.swiper-container', {
-					pagination : '.swiper-pagination',
-					paginationClickable :true,
-					slidesPerView : 6,
-					autoplay: 10000,
-					loop : true
-				})
+				setTimeout(function() {
+					var swiper = new Swiper('.swiper-container', {
+						pagination : '.swiper-pagination',
+						paginationClickable :true,
+						slidesPerView : slideNum,
+						autoplay: 10000,
+						loop : true
+					})
+				}, 1)
 				
 				var options = {
 					useEasing: true,
@@ -241,18 +253,6 @@
 					$('.threeBg').addClass('leftAnimate');
 				};
 
-				var offset = 300,
-					offset_opacity = 1200,
-					scroll_top_duration = 700,
-					$back_to_top = $('.cd-top');
-
-				$back_to_top.on('click', function(event) {
-					event.preventDefault();
-					$('body,html').animate({
-						scrollTop: 0,
-					}, scroll_top_duration)
-				})
-				
 				window.onscroll = function() {
 					if ($(window).scrollTop() + $(window).height() > $('.numCount').offset().top && countLimit === 1) {
 						if ( !homeCount.error ) { homeCount.start(); } else { console.error(homeCount.error); }
@@ -270,11 +270,6 @@
 					if ($(window).scrollTop() + $(window).height() > $('.threeBg>div>div').offset().top) {
 						$('.threeBg').addClass('leftAnimate');
 					};
-
-					($(window).scrollTop() > offset) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
-					if ($(window).scrollTop() > offset_opacity) {
-						$back_to_top.addClass('cd-fade-out')
-					}
 				};
 
 				jQuery.rnd = function(m,n) {

@@ -22,8 +22,10 @@
 	<body class="why">
 		<nav class="pageTop">
 			<div>
-				<a href="index.html"><img class="img-responsive" src="img/logo.png"></a>
-				<p><i class="iconfont">&#xe64e;</i>4000-328-806</p>
+				<div class="logoArea">
+					<a href="index.html"><img class="img-responsive" src="img/logo.png"></a>
+					<p><i class="iconfont">&#xe64e;</i>4000-328-806</p>
+				</div>
 				<div class="navigation">
 					<a href="1_index.html">主页</a>
 					<a href="2_us.html">关于弘辉量子</a>
@@ -39,7 +41,7 @@
 				<p>光催化技术</p>
 				<p class="point"><span></span><span></span><span></span></p>
 				<p>纳米保护层</p>
-				<p>标本兼治，一步到位</p>
+				<p>标本兼治&nbsp;&nbsp;一步到位</p>
 			</div>
 		</div>
 
@@ -100,31 +102,5 @@
 		</div>
 		
 		<footer><p>Copyright © 2018 Hong Hui Quantum. All Rights Reserved.</p></footer>
-
-		<a href="javascript:" class="cd-top">Top</a>
-
-		<script type="text/javascript" src="jquery.min.js"></script>	
-		<script>
-			$(function() {
-				var offset = 300,
-					offset_opacity = 1200,
-					scroll_top_duration = 700,
-					$back_to_top = $('.cd-top');
-
-				$back_to_top.on('click', function(event) {
-					event.preventDefault();
-					$('body,html').animate({
-						scrollTop: 0,
-					}, scroll_top_duration)
-				})
-				
-				window.onscroll = function() {
-					($(window).scrollTop() > offset) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
-					if ($(window).scrollTop() > offset_opacity) {
-						$back_to_top.addClass('cd-fade-out')
-					}
-				};
-			})
-		</script>
 	</body>
 </html>

@@ -24,8 +24,10 @@
 		<div class="indexWindow">
 			<nav class="pageTop">
 				<div>
-					<a href="index.html"><img class="img-responsive" src="img/logo_w.png"></a>
-					<p><i class="iconfont">&#xe64e;</i>4000-328-806</p>
+					<div class="logoArea">
+						<a href="index.html"><img class="img-responsive" src="img/logo_w.png"></a>
+						<p><i class="iconfont">&#xe64e;</i>4000-328-806</p>
+					</div>
 					<div class="navigation">
 						<a href="1_index.html">主页</a>
 						<a href="2_us.html">关于弘辉量子</a>
@@ -38,7 +40,7 @@
 
 			<div class="swiper-container swiperBanner">
 				<div class="swiper-wrapper">
-					<div class="swiper-slide">
+					<div class="swiper-slide usBanner" style="background-image: url(img/usBanner_1.jpg);">
 						<canvas id="c"></canvas>
 						<div class="indexWindowBanner first">
 							<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
@@ -118,24 +120,24 @@
 				};
 
 				var Circle = function(x, y, tx, ty, r) {
-						this.x = x;
-						this.y = y;
-						this.ox = x;
-						this.oy = y;
-						this.tx = tx;
-						this.ty = ty;
-						this.lx = x;
-						this.ly = y;
-						this.r = r;
-						this.br = r;
-						this.a = Math.random() * Math.PI * 2;
-						this.sx = Math.random() * 0.5;
-						this.sy = Math.random() * 0.5;
-						this.o = Math.random() * 1;
-						this.delay = Math.random() * 200;
-						this.delayCtr = 0;
-						this.hue = Math.random() * 360;
-					};
+					this.x = x;
+					this.y = y;
+					this.ox = x;
+					this.oy = y;
+					this.tx = tx;
+					this.ty = ty;
+					this.lx = x;
+					this.ly = y;
+					this.r = r;
+					this.br = r;
+					this.a = Math.random() * Math.PI * 2;
+					this.sx = Math.random() * 0.5;
+					this.sy = Math.random() * 0.5;
+					this.o = Math.random() * 1;
+					this.delay = Math.random() * 200;
+					this.delayCtr = 0;
+					this.hue = Math.random() * 360;
+				};
 
 				Circle.prototype = {
 					constructor: Circle,
@@ -204,7 +206,7 @@
 				txtCtx.font = 'bold 2rem Microsoft Yahei';
 				// txtCtx.textAlign = 'center';
 				// txtCtx.baseline = 'middle';
-				txtCtx.fillText('弘辉量子', WIDTH / 4.01, HEIGHT / 2.2);
+				txtCtx.fillText('弘辉量子', WIDTH / 4.01, (HEIGHT / 2 / parseInt(oHtml.style.fontSize) - 0.75) * parseInt(oHtml.style.fontSize));
 
 				ctx.font = 'bold 12px Microsoft Yahei';
 				ctx.textAlign = 'center';

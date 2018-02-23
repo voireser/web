@@ -22,8 +22,10 @@
 	<body class="tech">
 		<nav class="pageTop">
 			<div>
-				<a href="index.html"><img class="img-responsive" src="img/logo.png"></a>
-				<p><i class="iconfont">&#xe64e;</i>4000-328-806</p>
+				<div class="logoArea">
+					<a href="index.html"><img class="img-responsive" src="img/logo.png"></a>
+					<p><i class="iconfont">&#xe64e;</i>4000-328-806</p>
+				</div>
 				<div class="navigation">
 					<a href="1_index.html">主页</a>
 					<a href="2_us.html">关于弘辉量子</a>
@@ -69,14 +71,14 @@
 				</p>
 			</div>
 			<div class="listFour">
-				<p><i class="iconfont right">&#xe637;</i>室内空气污染治理光触媒<span>(TPX-HL)</span></p>
-				<p><i class="iconfont right">&#xe637;</i>日本排行第一的陶瓷光触媒<span>(PTA)</span></p>
-				<p><i class="iconfont right">&#xe637;</i>外墙自洁光触媒<span>(TO)</span></p>
-				<p><i class="iconfont right">&#xe637;</i>车用型光触媒<span>(TPX-85)</span></p>
-				<p><i class="iconfont right">&#xe637;</i>玻璃(幕墙)自洁光触媒<span>(TPX-HP)</span></p>
-				<p><i class="iconfont right">&#xe637;</i>抗菌型光触媒<span>(TPX-VB)</span></p>
-				<p><i class="iconfont right">&#xe637;</i>光触媒玩具</p>
-				<p><i class="iconfont right">&#xe637;</i>光触媒陶瓷工艺品</p>
+				<p class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><i class="iconfont right">&#xe637;</i>室内空气污染治理光触媒<span>(TPX-HL)</span></p>
+				<p class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><i class="iconfont right">&#xe637;</i>日本排行第一的陶瓷光触媒<span>(PTA)</span></p>
+				<p class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><i class="iconfont right">&#xe637;</i>外墙自洁光触媒<span>(TO)</span></p>
+				<p class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><i class="iconfont right">&#xe637;</i>车用型光触媒<span>(TPX-85)</span></p>
+				<p class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><i class="iconfont right">&#xe637;</i>玻璃(幕墙)自洁光触媒<span>(TPX-HP)</span></p>
+				<p class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><i class="iconfont right">&#xe637;</i>抗菌型光触媒<span>(TPX-VB)</span></p>
+				<p class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><i class="iconfont right">&#xe637;</i>光触媒玩具</p>
+				<p class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><i class="iconfont right">&#xe637;</i>光触媒陶瓷工艺品</p>
 			</div>
 		</div>
 
@@ -271,8 +273,6 @@
 		
 		<footer><p>Copyright © 2018 Hong Hui Quantum. All Rights Reserved.</p></footer>
 
-		<a href="javascript:" class="cd-top">Top</a>
-
 		<div class="jDialog" id="modal_japan">
 			<div class="swiper-container">
 				<div class="swiper-wrapper">
@@ -346,6 +346,12 @@
 						.css('right', (Math.random() - 0.5) * 30 + '%');
 				});
 
+				$('.catchMe').on('touchstart', function() {
+					$(this)
+						.css('top', (Math.random() - 0.5) * 30 + '%')
+						.css('right', (Math.random() - 0.5) * 30 + '%');
+				})
+
 				$('[data-toggle]').on('click', function() {
 					$('.catchMe').css('top', 0).css('right', 0);
 				})
@@ -354,27 +360,10 @@
 					$('.fourPoint').addClass('fourAnimate');
 				};
 
-				var offset = 300,
-					offset_opacity = 1200,
-					scroll_top_duration = 700,
-					$back_to_top = $('.cd-top');
-
-				$back_to_top.on('click', function(event) {
-					event.preventDefault();
-					$('body,html').animate({
-						scrollTop: 0,
-					}, scroll_top_duration)
-				})
-				
 				window.onscroll = function() {
 					if ($(window).scrollTop() + $(window).height() > $('.fourPoint').offset().top) {
 						$('.fourPoint').addClass('fourAnimate');
 					};
-
-					($(window).scrollTop() > offset) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
-					if ($(window).scrollTop() > offset_opacity) {
-						$back_to_top.addClass('cd-fade-out')
-					}
 				};
 			})
 		</script>
