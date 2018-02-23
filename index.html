@@ -156,7 +156,8 @@
 		</div>
 
 		<script type="text/javascript" src="swiper/swiper.min.js"></script>	
-		<script type="text/javascript"> 
+		<script type="text/javascript" src="jquery.min.js"></script>	
+		<script type="text/javascript">
 			var usBanner = new Image();
 			usBanner.src="img/usBanner_1.jpg";
 
@@ -283,7 +284,7 @@
 				txtCanvas.width = WIDTH;
 				txtCanvas.height = HEIGHT;
 
-				txtCtx.font = 'bold 2rem Microsoft Yahei';
+				txtCtx.font = 'bold ' + 2 * parseInt(oHtml.style.fontSize) + 'px Microsoft Yahei';
 				// txtCtx.textAlign = 'center';
 				// txtCtx.baseline = 'middle';
 				txtCtx.fillText('弘辉量子', WIDTH / 4.01, (HEIGHT / 2 / parseInt(oHtml.style.fontSize) - 0.75) * parseInt(oHtml.style.fontSize));

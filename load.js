@@ -64,7 +64,6 @@ function calcPageFillRadius(x, y) {
 
 var addClickListeners = function() {
     document.addEventListener(pointer, function(e) {
-        e.preventDefault();
         if (e.touches && !e.pageX) { // fixes android issue that broke... everything, basically
             e.pageX = e.touches[0].pageX;
             e.pageY = e.touches[0].pageY;
