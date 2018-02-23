@@ -316,6 +316,10 @@
 					clickToggle = !clickToggle;
 				});
 
+				c.addEventListener('tap', function(e) {
+					clickToggle = !clickToggle;
+				});
+
 				requestAnimationFrame(function loop() {
 					requestAnimationFrame(loop);
 					ctx.globalCompositeOperation = 'source-over';
