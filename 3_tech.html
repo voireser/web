@@ -37,6 +37,7 @@
 		</nav>
 
 		<div class="banner">
+			<img class="img-responsive parallax" src="img/techBanner_1.jpg">
 			<div>
 				<p>核心技术</p>
 				<p class="point"><span></span><span></span><span></span></p>
@@ -83,6 +84,7 @@
 		</div>
 
 		<div class="useWay">
+			<img class="img-responsive parallax" src="img/techBanner_2.jpg">
 			<div>
 				<div>
 					<p><i class="iconfont">&#xe638;</i>商业</p>
@@ -258,6 +260,7 @@
 					</p>
 				</div>
 			</div>
+			<img class="img-responsive parallax" src="img/footerPic.jpg">
 		</div>
 
 		<div class="footer">
@@ -311,6 +314,7 @@
 
 		<script type="text/javascript" src="swiper/swiper.min.js"></script>	
 		<script type="text/javascript" src="jquery.min.js"></script>	
+		<script type="text/javascript" src="jquery.parallax.js"></script>	
 		<script type="text/javascript" src="jdialog.min.js"></script>	
 		<script type="text/javascript">
 			$(function() {
@@ -365,6 +369,11 @@
 						$('.fourPoint').addClass('fourAnimate');
 					};
 				};
+
+				$(".parallax").parallax({
+					speed: 100,
+					ascending: true
+				});
 			})
 		</script>
 	</body>

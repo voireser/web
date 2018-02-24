@@ -37,6 +37,7 @@
 		</nav>
 
 		<div class="banner">
+			<img class="img-responsive parallax" src="img/caseBanner_1.jpg">
 			<div>
 				<p>我们的案例</p>
 				<p class="point"><span></span><span></span><span></span></p>
@@ -70,6 +71,7 @@
 					</p>
 				</div>
 			</div>
+			<img class="img-responsive parallax" src="img/footerPic.jpg">
 		</div>
 
 		<div class="footer">
@@ -91,6 +93,7 @@
 		
 		<script type="text/javascript" src="swiper/swiper.min.js"></script>	
 		<script type="text/javascript" src="jquery.min.js"></script>	
+		<script type="text/javascript" src="jquery.parallax.js"></script>	
 		<script type="text/javascript" src="jquery.filterizr.min.js"></script>	
 		<script type="text/javascript" src="jdialog.min.js"></script>	
 		<script type="text/javascript">
@@ -229,6 +232,11 @@
 						});
 					}
 				})
+
+				$(".parallax").parallax({
+					speed: 100,
+					ascending: true
+				});
 			})
 		</script>
 	</body>

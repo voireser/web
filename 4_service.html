@@ -36,6 +36,7 @@
 		</nav>
 
 		<div class="banner">
+			<img class="img-responsive parallax" src="img/serviceBanner_1.jpg">
 			<div>
 				<p>我们的服务</p>
 				<p class="point"><span></span><span></span><span></span></p>
@@ -249,6 +250,7 @@
 					</p>
 				</div>
 			</div>
+			<img class="img-responsive parallax" src="img/footerPic.jpg">
 		</div>
 
 		<div class="footer">
@@ -265,6 +267,7 @@
 		<footer><p>Copyright © 2018 Hong Hui Quantum. All Rights Reserved.</p></footer>
 
 		<script type="text/javascript" src="jquery.min.js"></script>	
+		<script type="text/javascript" src="jquery.parallax.js"></script>	
 		<script type="text/javascript">
 			$(function() {
 				if ($(window).scrollTop() + $(window).height() > $('.showThree>div').offset().top) {
@@ -284,6 +287,11 @@
 						$('.process').addClass('fiveLeft');
 					};
 				};
+				
+				$(".parallax").parallax({
+					speed: 100,
+					ascending: true
+				});
 			})
 		</script>
 	</body>
