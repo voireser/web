@@ -301,6 +301,10 @@
 					speed: 100,
 					ascending: true
 				});
+
+				window.addEventListener("orientationchange", function() {
+					location.reload();
+				}, false)
 			})
 		</script>
 	</body>
